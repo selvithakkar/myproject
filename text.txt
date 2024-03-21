@@ -1,0 +1,8 @@
+step 1 : python manage.py makemigrations
+step 2 : python manage.py sqlmigrate medisync file_name(inside migrations 0001_name)
+
+//database connectivity
+python's built-in light database SQLLite
+
+
+installing pandas library foe csv form
