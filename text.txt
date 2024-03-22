@@ -6,3 +6,18 @@ python's built-in light database SQLLite
 
 
 installing pandas library foe csv form
+<!-- 
+// git add . 
+git commit
+git push -u origin master 
+ -->
+
+to add project to git 
+git init 
+git config --global user.name "Tirth"
+git config --global user.email "tirthshah815@gmail.com"
+git init
+git add . 
+git commit -m "first"
+git remote add origin https://github.com/Tirthh2004/myproject.git 
+git push -u origin master 
