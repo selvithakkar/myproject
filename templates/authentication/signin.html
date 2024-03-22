@@ -10,7 +10,7 @@
         .color1 {
             margin-top: -0.8%;
             margin-left: -0.8%;
-            display: flex;
+            display: flex;  
             background-color: #212633;
             height: 642.5px;
             margin-right: 73%;
@@ -57,7 +57,7 @@
         .form input {
             outline: 0;
             background: #f2f2f2;
-            border-radius: 8px;
+            border-radius: 4px;
             width: 97%;
             border: 0;
             margin: 10px;
@@ -70,12 +70,13 @@
             outline: 0;
             /* background: #ADBC9F; */
             background-color: #e3ebf3;
-            width: 50%;
+            width: 55%;
             border: 0;
+            /* padding: 15%; */
             margin-top: 16px;
             margin-bottom: 5%;
-            border-radius: 25px;
-            padding: 11px;
+            border-radius: 5px;
+            padding: 14px;
             color: black;
             font-size: 13px;
             -webkit-transition: all 0.3 ease;
@@ -140,21 +141,22 @@
         <div class="color1"></div>
         <div class="color2"></div>
     </div>
-    <div class="login">
-        <div class="form">
-            <form action="/signin" method="post">
-                {% csrf_token %}
-                <h3 style="color: white;"><b>SIGN IN</b></h3>
-                <input type="text" required placeholder="Enter Username" id="username" name="username"
-                    autoComplete="off" /> <br>
+        <div class="login">
+            <div class="form">
+                <form action="/signin" method="post">
+                    {% csrf_token %}
+                    <h3 style="color: white;"><b>SIGN IN</b><br><o style="font-size: 14px;">Sign in to access your account</o></h3>
+                    <input type="text" required placeholder="Enter Username" id="username" name="username"
+                        autoComplete="off" /> <br>
 
-                <br /><input type="password" required placeholder="Enter Password" id="password" name="password"
-                    autoComplete="off" /><br />
+                    <br /><input type="password" required placeholder="Enter Password" id="password" name="password"
+                        autoComplete="off" /><br />
 
-                <br><button type="submit">Sign In</button> <br>
-            </form>
+                    <br><button type="submit" style="font-size: 15px; margin-top: -1%; margin-bottom: 10%;">Sign In</button> <br>
+                    <o style="color: white;font-size: 15px;">Don't have an account ? <br> <a href="/signup" style="color: white;font-size: 15px;margin-left: 3%;" >Sign Up</a></o>
+                </form>
+            </div>
         </div>
-    </div>
 </body>
 
 </html>

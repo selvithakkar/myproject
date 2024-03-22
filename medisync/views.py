@@ -4,6 +4,7 @@ from django.shortcuts import redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User  
 from django.contrib import messages
+import re
 
 # Create your views here.
 def home(request):
@@ -61,8 +62,37 @@ def signup(request):
             messages.error(request,"Email already registered")
             return redirect('home')
         
-        if len(username)>10:
+        # Username validation
+        if len(username)>8:
             messages.error(request,"Username must be under 10 charactes")
+            return redirect('home')
+        elif not username.isalnum():
+            messages.error(request,"Username must be alpha-numeric")
+            return redirect('home')
+        elif not re.match("^[a-zA-Z0-9_]*$",username):
+            messages.error(request, "Username can only contain letters, numbers, and underscores")
+            return redirect('home')
+        
+        # Password validation
+        if len(password) < 8:
+            messages.error(request, "Password must be at least 8 characters long")
+            return redirect('home')
+        elif not re.search("[a-z]", password):
+            messages.error(request, "Password must contain at least one lowercase letter")
+            return redirect('home')
+        elif not re.search("[A-Z]", password):
+            messages.error(request, "Password must contain at least one uppercase letter")
+            return redirect('home')
+        elif not re.search("[0-9]", password):
+            messages.error(request, "Password must contain at least one digit")
+            return redirect('home')
+        elif not re.search("[_@$]", password):
+            messages.error(request, "Password must contain at least one special character (_@$)")
+            return redirect('home')
+        elif password != repassword:
+            messages.error(request, "Passwords didn't match")
+            return redirect('home')
+
 
         if password != repassword:
             messages.error(request,"Passwords didn't match")
@@ -77,7 +107,6 @@ def signup(request):
         myuser.last_name = email
 
         # myuser.is_active=False
-        
         myuser.save() 
 
         return redirect('signin')
