@@ -19,6 +19,9 @@ def report(request):
 def stocktrack(request):
     return render(request,"authentication/stocktrack.html")
 
+def inventory(request):
+    return render(request,"authentication/inventory.html")
+
 
 def signin(request):
     if request.method == 'POST':

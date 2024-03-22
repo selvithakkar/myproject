@@ -11,6 +11,7 @@ urlpatterns = [
     path('dashboard',views.dashboard, name="dashboard"),
     path('report',views.report, name="report"),
     path('stocktrack',views.stocktrack, name="stocktrack"),    
+    path('inventory',views.inventory, name="inventory"),    
 
     path('edit_entry/<int:medicine_id>/<int:entry_id>/', views.edit_entry, name='edit_entry'),
 
