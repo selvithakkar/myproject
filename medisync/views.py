@@ -28,6 +28,14 @@ def stocktrack(request):
 def inventory(request):
     return render(request,"authentication/inventory.html")
 
+def InventoryDetails(request):
+    return render(request,"authentication/InventoryDetails.html")
+
+def addmedicine(request):
+    return render(request,"authentication/addmedicine.html")
+
+def inventoryhome(request):
+    return render(request, "authentication/inventoryhome.html")
 
 def signin(request):
     if request.method == 'POST':
@@ -124,7 +132,6 @@ def signup(request):
 # // report.js
 # In your Django app's views.py file
 
-from django.http import JsonResponse
 from .models import InventoryReport
 
 # def InventoryReport(request):
@@ -229,7 +236,6 @@ def generate_report_and_chart(request):
 # ////////////////////////
 # stock track.js
 
-from django.shortcuts import render, redirect
 from .models import Stocktrack, MedicineHistory
 
 def track_quantity(request):
@@ -277,7 +283,6 @@ def edit_entry(request, medicine_id, entry_id):
     return render(request, 'authentication/stocktrack.html', {'entry': entry})
 
 #export to csv form 
-from django.http import HttpResponse
 import csv
 from .models import MedicineHistory
 

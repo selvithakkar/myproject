@@ -7,10 +7,7 @@
     <title>MediSync-Trusted Inventory Partner</title>
     <link rel="stylesheet" href="/static/css/global.css" />
     <link rel="stylesheet" href="/static/css/dashboard-landing-page.css" />
-    <link rel="stylesheet" href="/static/css/inventory.css">
-    <link rel="stylesheet" href="/static/css/inventory-tirth.css">
-    <script src="/static/public/nicepage.js"></script>
-    <script src="/static/public/jquery.js"></script>
+    <link rel="stylesheet" href="/static/css/inventory-home.css ">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM Sans:wght@400;700&display=swap" />
@@ -195,120 +192,134 @@
             //////////////////////////////////////
             //////////////////////////////////////
         -->
-            <!-- <div class="main"><b>
-                    <k style="color:black;font-size: 24px;text-align: center;">&nbsp;<b>Medicine Details</b>&nbsp; </k>
-                    <kk>Details related to pharmacy</kk> -->
-            <!-- </div> -->
-
+            <div class="main" style="margin-left: -55%;"><b>
+                    <k style="color:black;font-size: 22px;margin-left: -1.5%;">&nbsp;<b>Inventory</b>&nbsp; </k>
+                    <!-- <h style="font-size: 20px;"><b>>&nbsp;</b></h> -->
+                    <!-- <k style="color:black;font-size: 23px;"><b>List of Medicines</b></k><br> -->
+                    <br>
+                    <br>
+                    <kk style="font-size: 17px; margin-left: 0%;margin-top: 10px;">List of medicines available for sales
+                    </kk>
+            </div>
             <!-- 
     //////////////////////////////////////
     //////////////////////////////////////
  -->
+            <section class="view-full-list-wrapper">
+                <div class="view-full-list">
+                    <div class="inventory-text-wrapper">
+                        <div class="inventory-text">
+                            <div class="view-full-list-btn-parent">
+                                <!-- <div class="view-full-list-btn"> -->
+                                <!-- <h2 class="inventory26">Inventory</h2> -->
+                                <!-- <div class="list-of-medicines16">
+    List of medicines available for sales.
+  </div> -->
+                                <!-- </div> -->
 
-            <section class="u-clearfix u-section-1" id="sec-b394">
-                <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-                    <!-- ............................................................................... -->
-                    <form action="try.php" method="post" onsubmit="return check1()" name="form1">
-                        <div id="personal-details">
-                            <h2 align="center">Medicine Details</h2>
-                            <table width="100%">
-                                <tr>
-                                    <td>Medicine Name</td>
-                                    <td>
-                                        <input type="text" placeholder="Medicine Name" size="25">
-                                    </td>
-                                    <td>Company Name</td>
-                                    <td>
-                                        <input type="text" placeholder="Manufacturing Company" size="25">
-                                    </td>
-                                </tr>
+                                <div class="frame-parent42">
+                                    <div class="rectangle-parent211">
+                                        <div class="frame-child268"></div>
+                                        <div class="rectangle-parent212">
+                                            <div class="frame-child269"></div>
+                                            <img class="medical-services-black-24dp-2-icon2" loading="eager" alt=""
+                                                src="/static/public/medical-services-black-24dp-2.svg" />
 
-                                <tr>
-                                    <td>Date</td>
-                                    <td>
-                                        <input type="date">
-                                    </td>
-                                    <td>Dealer ID</td>
-                                    <td>
-                                        <select>
-                                            <option>Dealer 1</option>
-                                            <option>Dealer 2</option>
-                                            <option>Dealer 3</option>
-                                            <option>Dealer 4</option>
-                                            <option>Dealer 5</option>
-                                            <option>Dealer 6</option>
-                                            <option>Dealer 7</option>
-                                        </select>
-                                    </td>
-                                </tr>
+                                            <b class="vector-warningamberblackdp">298</b>
+                                            <div class="medicines-available2">
+                                                Medicines Available
+                                            </div>
+                                        </div>
+                                        <div class="group-container3">
+                                            <div class="view-full-list1">View Full List</div>
+                                            <div class="group-container-inner">
+                                                <img class="frame-child270" loading="eager" alt=""
+                                                    src="/static/public/group-22.svg" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--  -->
+                                    <div class="rectangle-parent213">
+                                        <div class="frame-child271"></div>
+                                        <div class="rectangle-parent214">
+                                            <div class="frame-child272"></div>
+                                            <img class="medical-services-black-24dp-2-icon3" alt=""
+                                                src="/static/public/medical-services-black-24dp-2-1.svg" />
 
+                                            <b class="b11">02</b>
+                                            <div class="medicine-groups13">Medicine Groups</div>
+                                        </div>
+                                        <div class="view-groups-parent">
+                                            <div class="view-groups">View Groups</div>
+                                            <div class="frame-wrapper9">
+                                                <img class="frame-child273" alt="" src="/static/public/group-22.svg" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--  -->
+                                    <br>
+                                    <div class="rectangle-parent211">
+                                        <div class="frame-child268"></div>
+                                        <div class="rectangle-parent212">
+                                            <div class="frame-child269"></div>
+                                            <img class="medical-services-black-24dp-2-icon2" loading="eager" alt=""
+                                                src="/static/public/medical-services-black-24dp-2.svg" />
 
-                                <tr>
-                                    <td>Strips per box</td>
-                                    <td>
-                                        <input type="number" placeholder="1-150" size="20" min="1" max="150">
-                                    </td>
-                                    <td>Dealer's Email Id</td>
-                                    <td>
-                                        <input type="email" placeholder="your id@gmail.com" name="email" size="25">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <!-- <td>Language Known</td> -->
-                                    <td>Tablets per strips</td>
-                                    <td>
-                                        <input type="number" placeholder="1-15*" size="20" min="1" max="15">
-                                    </td>
-                                    <td>Dealer's Phone number</td>
-                                    <td>
-                                        <input type="number" placeholder="+91****" name="phnumber" size="25" min="0">
-                                    </td>
-                                </tr>
+                                            <b class="vector-warningamberblackdp">298</b>
+                                            <div class="medicines-available2">
+                                                Medicines Available
+                                            </div>
+                                        </div>
+                                        <div class="group-container3">
+                                            <div class="view-full-list1">View Full List</div>
+                                            <div class="group-container-inner">
+                                                <img class="frame-child270" loading="eager" alt=""
+                                                    src="/static/public/group-22.svg" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--  -->
+                                    <div class="rectangle-parent215">
+                                        <div class="frame-child274"></div>
+                                        <div class="rectangle-parent216">
+                                            <div class="frame-child275"></div>
+                                            <img class="warning-amber-black-24dp-1-icon1" loading="eager" alt=""
+                                                src="/static/public/warning-amber-black-24dp-1.svg" />
 
-                                <tr>
-                                    <td>Date of Manufacturing</td>
-                                    <td>
-                                        <input type="date">
-                                    </td>
-                                    <td>Date of Expire</td>
-                                    <td>
-                                        <input type="date">
-                                    </td>
+                                            <b class="frame-group6">01</b>
+                                            <div class="medicine-shortage3">Medicine Shortage</div>
+                                        </div>
+                                        <div class="resolve-now-container">
+                                            <div class="resolve-now2">Resolve Now</div>
+                                            <img class="frame-child276" alt="" src="/static/public/group-22.svg" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="full-list-button">
+<button class="rectangle-parent217">
+  <div class="frame-child277"></div>
+  <img
+    class="vector-icon111"
+    alt=""
+    src="./public/vector-15.svg"
+  />
 
-                                </tr>
-                                <tr>
-                                    <td>Price per Unit</td>
-                                    <td>
-                                        <input type="number" placeholder="INR" size="25" min="1" max="15000">
-                                    </td>
-                                    <td>Price per Tablet</td>
-                                    <td>
-                                        <input type="number" placeholder="INR" size="25" min="1" max="15000">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td colspan="2">
-                                        <input type="Submit" value="Submit" class="button">
-                                    </td>
-                                    <td colspan="2">
-                                        <input type="Reset" value="Reset" class="button">
-                                    </td>
-                                    <td></td>
-                                </tr>
-                            </table>
+  <div class="add-new-item3">Add New Item</div>
+</button>
+</div> -->
                         </div>
+                    </div>
+                    <div class="frame-container3">
+                        <img class="frame-container-child" alt="" src="/static/public/rectangle-26.svg" />
 
-
-                    </form>
-
-
-
-
-
-                    <!-- ................................... -->
+                        <img class="notification-vector-icon" alt="" src="/static/public/vector-17.svg" />
+                    </div>
                 </div>
             </section>
+
+
+
             <!-- 
     //////////////////////////////////////
     //////////////////////////////////////

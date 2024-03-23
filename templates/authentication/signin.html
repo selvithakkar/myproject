@@ -29,10 +29,10 @@
                     <o style="font-size: 14px;">Sign in to access your account</o>
                 </h3>
                 <input type="text" required placeholder="Enter Username" id="username" name="username"
-                    autoComplete="off" /> <br>
+                    autoComplete="off" minlength="6" maxlength="10" title="Please Rewrite again" /> <br>
 
                 <br /><input type="password" placeholder="Enter Password" id="password" name="password"
-                    autoComplete="off" title="Please Enter " /><br />
+                    autoComplete="off" pattern="[a-zA-Z0-9]{8,}" /><br />
 
                 <br><button type="submit" style="font-size: 15px; margin-top: -1%; margin-bottom: 10%;">Sign In</button>
                 <br>

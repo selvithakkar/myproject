@@ -7,10 +7,7 @@
     <title>MediSync-Trusted Inventory Partner</title>
     <link rel="stylesheet" href="/static/css/global.css" />
     <link rel="stylesheet" href="/static/css/dashboard-landing-page.css" />
-    <link rel="stylesheet" href="/static/css/inventory.css">
-    <link rel="stylesheet" href="/static/css/inventory-tirth.css">
-    <script src="/static/public/nicepage.js"></script>
-    <script src="/static/public/jquery.js"></script>
+    <link rel="stylesheet" href="/static/css/addmedi.css ">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM Sans:wght@400;700&display=swap" />
@@ -195,120 +192,50 @@
             //////////////////////////////////////
             //////////////////////////////////////
         -->
-            <!-- <div class="main"><b>
-                    <k style="color:black;font-size: 24px;text-align: center;">&nbsp;<b>Medicine Details</b>&nbsp; </k>
-                    <kk>Details related to pharmacy</kk> -->
-            <!-- </div> -->
+            <div class="main" style="margin-left: -40%;"><b>
+                    <k style="color: darkgray;font-size: 22px;">&nbsp;<b>Inventory</b>&nbsp; </k>
+                    <h style="font-size: 20px;"><b>>&nbsp;</b></h>
+                    <k style="color:black;font-size: 23px;"><b>List of Medicines</b></k>
+                    <h style="font-size: 20px;">&nbsp;<b>>&nbsp;</b></h>
+                    <k style="color:black;font-size: 23px;"><b>Add Medicines</b></k><br>
+                    <br>
+                    <kk
+                        style="font-size: 17px; margin-left: 1.5%;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                        *All fields are mandatory, except mentioned as (optional).</kk>
+            </div>
 
             <!-- 
     //////////////////////////////////////
     //////////////////////////////////////
  -->
+    <div>
+        <form action="">
+            <br>
+            <label for="" style="margin-left: -80%;">Medicine Name</label>
+            <br> <input type="text" name="med_name" id="med_name" required class="i1" style="margin-left: -80%;"> <br>
+            
+            <label for="" class="i2">Medicine Id</label>
+            <br> <input type="text" name="med_id" id="med_id" required class="i3"> <br>
+            <br> 
+            <br><label for="" style="margin-left: -80%;margin-top: 10%;">Employee Id</label>
+             <br> <input type="text" name="med_id" id="med_id" required style="margin-left: -80%;"> <br>
 
-            <section class="u-clearfix u-section-1" id="sec-b394">
-                <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-                    <!-- ............................................................................... -->
-                    <form action="try.php" method="post" onsubmit="return check1()" name="form1">
-                        <div id="personal-details">
-                            <h2 align="center">Medicine Details</h2>
-                            <table width="100%">
-                                <tr>
-                                    <td>Medicine Name</td>
-                                    <td>
-                                        <input type="text" placeholder="Medicine Name" size="25">
-                                    </td>
-                                    <td>Company Name</td>
-                                    <td>
-                                        <input type="text" placeholder="Manufacturing Company" size="25">
-                                    </td>
-                                </tr>
+            <label for="" class="i4"> Quantity in Number</label>
+            <br> <input type="number" name="med_qty" id="med_qty" required class="i5"> <br>
 
-                                <tr>
-                                    <td>Date</td>
-                                    <td>
-                                        <input type="date">
-                                    </td>
-                                    <td>Dealer ID</td>
-                                    <td>
-                                        <select>
-                                            <option>Dealer 1</option>
-                                            <option>Dealer 2</option>
-                                            <option>Dealer 3</option>
-                                            <option>Dealer 4</option>
-                                            <option>Dealer 5</option>
-                                            <option>Dealer 6</option>
-                                            <option>Dealer 7</option>
-                                        </select>
-                                    </td>
-                                </tr>
+            <br><br><label for="" class="i6">How to Use</label>
+            <br> <textarea name="med_use" id="med_use" cols="44" rows="8" required class="i6"></textarea> <br>
 
+            <br><label for="" class="i7" style="display: flex;margin-left: 30%;margin-top: -46%;">Side Effects</label>
+            <br> <textarea name="med_eff" id="med_eff" cols="44" rows="8" required class="i8" style="margin-left: 30%;margin-top: -5.6%;"></textarea> <br>
+            <br> <br> 
+            <br><button class="button" style="margin-left: 3%;margin-top: -8%;font-size: 16px;padding: 5%;background-color: rgb(228, 37, 37);;">
+                <img alt="" src="/static/public/vector-15.svg"/>
+                <a href="/InventoryDetails"style="color:white;">Save Details</a> 
+            </button>
+        </form>
+    </div>
 
-                                <tr>
-                                    <td>Strips per box</td>
-                                    <td>
-                                        <input type="number" placeholder="1-150" size="20" min="1" max="150">
-                                    </td>
-                                    <td>Dealer's Email Id</td>
-                                    <td>
-                                        <input type="email" placeholder="your id@gmail.com" name="email" size="25">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <!-- <td>Language Known</td> -->
-                                    <td>Tablets per strips</td>
-                                    <td>
-                                        <input type="number" placeholder="1-15*" size="20" min="1" max="15">
-                                    </td>
-                                    <td>Dealer's Phone number</td>
-                                    <td>
-                                        <input type="number" placeholder="+91****" name="phnumber" size="25" min="0">
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>Date of Manufacturing</td>
-                                    <td>
-                                        <input type="date">
-                                    </td>
-                                    <td>Date of Expire</td>
-                                    <td>
-                                        <input type="date">
-                                    </td>
-
-                                </tr>
-                                <tr>
-                                    <td>Price per Unit</td>
-                                    <td>
-                                        <input type="number" placeholder="INR" size="25" min="1" max="15000">
-                                    </td>
-                                    <td>Price per Tablet</td>
-                                    <td>
-                                        <input type="number" placeholder="INR" size="25" min="1" max="15000">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td colspan="2">
-                                        <input type="Submit" value="Submit" class="button">
-                                    </td>
-                                    <td colspan="2">
-                                        <input type="Reset" value="Reset" class="button">
-                                    </td>
-                                    <td></td>
-                                </tr>
-                            </table>
-                        </div>
-
-
-                    </form>
-
-
-
-
-
-                    <!-- ................................... -->
-                </div>
-            </section>
             <!-- 
     //////////////////////////////////////
     //////////////////////////////////////

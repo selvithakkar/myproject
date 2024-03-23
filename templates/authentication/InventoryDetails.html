@@ -7,10 +7,7 @@
     <title>MediSync-Trusted Inventory Partner</title>
     <link rel="stylesheet" href="/static/css/global.css" />
     <link rel="stylesheet" href="/static/css/dashboard-landing-page.css" />
-    <link rel="stylesheet" href="/static/css/inventory.css">
-    <link rel="stylesheet" href="/static/css/inventory-tirth.css">
-    <script src="/static/public/nicepage.js"></script>
-    <script src="/static/public/jquery.js"></script>
+    <link rel="stylesheet" href="/static/css/Inventorydetails.css ">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM Sans:wght@400;700&display=swap" />
@@ -195,120 +192,29 @@
             //////////////////////////////////////
             //////////////////////////////////////
         -->
-            <!-- <div class="main"><b>
-                    <k style="color:black;font-size: 24px;text-align: center;">&nbsp;<b>Medicine Details</b>&nbsp; </k>
-                    <kk>Details related to pharmacy</kk> -->
-            <!-- </div> -->
+            <div class="main" style="margin-left: -53%;"><b>
+                    <k style="color: darkgray;font-size: 22px;">&nbsp;<b>Inventory</b>&nbsp; </k>
+                    <h style="font-size: 20px;"><b>>&nbsp;</b></h>
+                    <k style="color:black;font-size: 23px;"><b>List of Medicines</b></k><br>
+                    <br>
+                    <kk style="font-size: 17px; margin-left: 1.5%;">List of medicines</kk>
+            </div>
 
             <!-- 
     //////////////////////////////////////
     //////////////////////////////////////
  -->
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search Medicines...">
+                <button class="search-button"><img src="/static/public/download-removebg-preview (1).png" alt="Search"class="search-icon">
+                    <a href="" style="color: black;">Search</a>
+                </button>
+            </div>
 
-            <section class="u-clearfix u-section-1" id="sec-b394">
-                <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-                    <!-- ............................................................................... -->
-                    <form action="try.php" method="post" onsubmit="return check1()" name="form1">
-                        <div id="personal-details">
-                            <h2 align="center">Medicine Details</h2>
-                            <table width="100%">
-                                <tr>
-                                    <td>Medicine Name</td>
-                                    <td>
-                                        <input type="text" placeholder="Medicine Name" size="25">
-                                    </td>
-                                    <td>Company Name</td>
-                                    <td>
-                                        <input type="text" placeholder="Manufacturing Company" size="25">
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>Date</td>
-                                    <td>
-                                        <input type="date">
-                                    </td>
-                                    <td>Dealer ID</td>
-                                    <td>
-                                        <select>
-                                            <option>Dealer 1</option>
-                                            <option>Dealer 2</option>
-                                            <option>Dealer 3</option>
-                                            <option>Dealer 4</option>
-                                            <option>Dealer 5</option>
-                                            <option>Dealer 6</option>
-                                            <option>Dealer 7</option>
-                                        </select>
-                                    </td>
-                                </tr>
-
-
-                                <tr>
-                                    <td>Strips per box</td>
-                                    <td>
-                                        <input type="number" placeholder="1-150" size="20" min="1" max="150">
-                                    </td>
-                                    <td>Dealer's Email Id</td>
-                                    <td>
-                                        <input type="email" placeholder="your id@gmail.com" name="email" size="25">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <!-- <td>Language Known</td> -->
-                                    <td>Tablets per strips</td>
-                                    <td>
-                                        <input type="number" placeholder="1-15*" size="20" min="1" max="15">
-                                    </td>
-                                    <td>Dealer's Phone number</td>
-                                    <td>
-                                        <input type="number" placeholder="+91****" name="phnumber" size="25" min="0">
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>Date of Manufacturing</td>
-                                    <td>
-                                        <input type="date">
-                                    </td>
-                                    <td>Date of Expire</td>
-                                    <td>
-                                        <input type="date">
-                                    </td>
-
-                                </tr>
-                                <tr>
-                                    <td>Price per Unit</td>
-                                    <td>
-                                        <input type="number" placeholder="INR" size="25" min="1" max="15000">
-                                    </td>
-                                    <td>Price per Tablet</td>
-                                    <td>
-                                        <input type="number" placeholder="INR" size="25" min="1" max="15000">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td colspan="2">
-                                        <input type="Submit" value="Submit" class="button">
-                                    </td>
-                                    <td colspan="2">
-                                        <input type="Reset" value="Reset" class="button">
-                                    </td>
-                                    <td></td>
-                                </tr>
-                            </table>
-                        </div>
-
-
-                    </form>
-
-
-
-
-
-                    <!-- ................................... -->
-                </div>
-            </section>
+            <button class="button">
+                <img alt="" src="/static/public/vector-15.svg"/>
+                <a href="/addmedicine"style="color:white;">Add New Item</a> 
+            </button>
             <!-- 
     //////////////////////////////////////
     //////////////////////////////////////
