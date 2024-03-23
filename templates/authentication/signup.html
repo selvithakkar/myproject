@@ -4,128 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="signup.css">
+    <link rel="stylesheet" href="/static/css/signup.css">
     <title>MediSync-Trusted Inventory Partner</title>
     <style>
-        .color1 {
-            margin-top: -0.8%;
-            margin-left: -0.8%;
-            display: flex;
-            /* background-color: #ADBC9F; */
-            background-color: #212633;
-            height: 642.5px;
-            margin-right: 73%;
-        }
-
-        .color2 {
-            margin-top: -54%;
-            margin-right: 1%;
-            margin-left: 27%;
-            display: flex;
-            width: 986px;
-            /* height: 200px; */
-            /* background-color: #FBFADA; */
-            background-color: #e3ebf3;            
-            height: 717.7px;
-            /* set karje haji*/
-        }
-
-
-        /* /////////////////////// */
-        .login {
-            font-family: "Poppins", sans-serif;
-        }
-
-        .form {
-            /* background-color: #D4E7C5; */
-            background-color: #212633   ;
-            /*Light green1 */
-            /* background-color: #E1F0DA; */
-            display: flex;
-            border: 0px solid black;
-            padding: 3%;
-            justify-content: center;
-            text-align: center;
-            margin-left: 55%;
-            margin-top: -41%;
-            width: 312.5px;
-            box-sizing: border-box;
-        }
-
-        h2 {
-            font-size: 25px;
-        }
-
-        .form input {
-            outline: 0;
-            /* background: #f2f2f2; */
-            border-radius: 4px;
-            width: 97%;
-            border: 0;
-            margin: 10px;
-            margin-left: -2.5%;
-            padding: 10px;
-            font-size: 13px;
-        }
-
-        .form button {
-            outline: 0;
-            /* background: #ADBC9F; */
-            background: #e3ebf3;
-            width: 55%;
-            border: 0;
-            margin-top: 16px;
-            margin-bottom: 5%;
-            border-radius: 5px;
-            padding: 11px;
-            color: black;
-            font-size: 15px;
-            -webkit-transition: all 0.3 ease;
-            transition: all 0.4s ease-in-out;
-            cursor: pointer;
-        }
-
-        .form button:hover,
-        .form button:active,
-        .form button:focus {
-            background: black;
-            color: hsl(0, 0%, 100%);
-        }
-
-        .message {
-            margin: 15px 0;
-            text-align: left;
-        }
-
-        .form .message a {
-            font-size: 14px;
-            color: #6a62d2;
-            /* text-decoration: none; */
-        }
-
-        .form a {
-            font-size: 12.5px;
-            color: darkblue;
-            margin-left: -74.5%;
-            font-family: "Poppins", sans-serif;
-        }
-
-        p {
-            text-align: right;
-            margin-top: -1%;
-            font-size: 12px;
-            margin-right: 6.8%;
-        }
-
-        p u {
-            color: darkblue;
-            cursor: pointer;
-        }
-
-        k {
-            margin-left: -54%;
-            font-size: 12.5px;
-        }
     </style>
 </head>
 
@@ -144,26 +25,53 @@
     </div>
     <div class="login">
         <div class="form">
-            <form action="/signup" method="post">
+            <form action="/signup" method="post" id="myForm">
                 {% csrf_token %}
                 <h3 style="color: white;"><b>SIGN IN</b></h3>
                 <input type="text" required placeholder="Create a Username" id="username" name="username"
-                    autoComplete="off" /> <br>
+                    autoComplete="off" minlength="6" maxlength="10"/> <br>
 
-                <input type="email" required placeholder="Enter Email Id" id="email" name="email"
-                    autoComplete="off" /> <br>
+                <input type="email" required placeholder="Enter Email Id" id="email" name="email" autoComplete="off" />
+                <br>
 
                 <input type="password" required placeholder="Enter Password" id="password" name="password"
-                    autoComplete="off" />
+                    autoComplete="off" pattern="[a-zA-Z0-9]{8,}"
+                    title="Password must be at least 8 characters long and contain only letters and numbers" />
 
                 <input type="password" required placeholder="Re-Enter Password" id="repassword" name="repassword"
                     autoComplete="off" />
 
                 <button type="submit">Login</button> <br>
-                &nbsp;&nbsp;<j style="color: white;"> Already Sign In Click here</j>&nbsp; &nbsp;<a href="/signin" style="margin-left: 1%;font-size: 2.6vh; color: white;" >Sign In</a>
+                &nbsp;&nbsp;<j style="color: white;"> Already Sign In Click here</j>&nbsp; &nbsp;<a href="/signin"
+                    style="margin-left: 1%;font-size: 2.6vh; color: white;">Sign In</a>
             </form>
         </div>
     </div>
+    <script>
+
+        document.getElementById('myForm').addEventListener('submit', function (event) {
+            // Get form inputs
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            // Validate inputs
+            if (username === '') {
+                alert('Please enter a username');
+                event.preventDefault(); // Prevent form submission
+            }
+        });
+
+        document.getElementById('myForm').addEventListener('submit', function (event) {
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('repassword').value;
+
+            if (password !== confirmPassword) {
+                alert('Password Credentials Do Not Match. Re-Enter Again.');
+                event.preventDefault(); // Prevent form submission
+            }
+        });
+    </script>
+
 </body>
 
 </html>
