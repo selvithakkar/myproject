@@ -37,6 +37,12 @@ def addmedicine(request):
 def inventoryhome(request):
     return render(request, "authentication/inventoryhome.html")
 
+def employee(request):
+    return render(request,"authentication/employee.html")
+
+def customer(request):
+    return render(request,"authentication/customer.html")
+
 def signin(request):
     if request.method == 'POST':
         username = request.POST['username']

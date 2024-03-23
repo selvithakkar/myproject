@@ -15,6 +15,9 @@ urlpatterns = [
     path('InventoryDetails',views.InventoryDetails, name='InventoryDetails'),
     path('addmedicine',views.addmedicine,name="addmedicine"),
     path('inventoryhome',views.inventoryhome,name="inventoryhome"),
+    path('employee',views.employee,name="employee"),
+    path('customer',views.customer,name="customer"),
+
 
     path('edit_entry/<int:medicine_id>/<int:entry_id>/', views.edit_entry, name='edit_entry'),
 

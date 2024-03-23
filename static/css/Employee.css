@@ -1,0 +1,29 @@
+.emp{
+    position:sticky;
+    margin-left:-70%;
+    font-size: 16px;
+}
+.emp input{
+    padding: 0.3%;
+}
+.emp button{
+    width: 70px;
+    height: 25px;
+    font-size: 15px;
+}
+table{
+    margin-top: 1%;
+    border-collapse: collapse;
+    position: absolute;
+    width: 1050px;
+    margin-left:-23.8% ;
+}
+th, td {
+    align-items: center;
+    border: 2px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+th {
+    background-color: #f2f2f2;
+}
