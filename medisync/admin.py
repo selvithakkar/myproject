@@ -4,13 +4,20 @@ from django.contrib import admin
 from .models import Medicine
 from .models import Employee
 from .models import signIn
-
+from .models import InvenDetails
 
 @admin.register(Medicine)
 class medicineAdmin(admin.ModelAdmin):
     list_display = Medicine.DisplayFields 
     search_fields = Medicine.SearchableFields
     list_filter = Medicine.FilterFields
+
+
+@admin.register(InvenDetails)
+class detailsAdmin(admin.ModelAdmin):
+    list_display = InvenDetails.DisplayFields 
+    search_fields = InvenDetails.SearchableFields
+    list_filter = InvenDetails.FilterFields
 
 
 @admin.register(Employee)

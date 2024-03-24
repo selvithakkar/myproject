@@ -7,12 +7,39 @@
     <title>MediSync-Trusted Inventory Partner</title>
     <link rel="stylesheet" href="/static/css/global.css" />
     <link rel="stylesheet" href="/static/css/dashboard-landing-page.css" />
-    <link rel="stylesheet" href="/static/css/Inventorydetails.css ">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="/static/css/Inventorydetails.css">
+    <script src="/static/public/zzinvendetail.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM Sans:wght@400;700&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito Sans:wght@900&display=swap" />
+    <style>
+        table {
+            margin-top: -1%;
+            border-collapse: collapse;
+            position: absolute;
+            width: 1028px;
+            margin-left: -25%;
+        }
+
+        /* th, */
+        td {
+            align-items: center;
+            background-color: #f2f2f2;
+            border: 3px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            align-items: center;
+            border: 3px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+    </style>
 </head>
 
 <body>
@@ -205,16 +232,28 @@
     //////////////////////////////////////
  -->
             <div class="search-container">
-                <input type="text" class="search-input" placeholder="Search Medicines...">
-                <button class="search-button"><img src="/static/public/download-removebg-preview (1).png" alt="Search"class="search-icon">
+                <input type="text" id="userId" class="search-input" placeholder="Search Medicines..." minlength="2" maxlength="13" required/>
+                <button class="search-button" onclick="submitUserId()">
+                    <img src="/static/public/download-removebg-preview (1).png" alt="Search" class="search-icon">
                     <a href="" style="color: black;">Search</a>
                 </button>
             </div>
-
+             <!-- <div class="emp">
+                <label for="userId">Enter Your User ID:&nbsp;</label>
+                <input type="text" id="userId">&nbsp;&nbsp;
+                <button onclick="submitUserId()">Submit</button>
+            </div> -->
+        
             <button class="button">
-                <img alt="" src="/static/public/vector-15.svg"/>
-                <a href="/addmedicine"style="color:white;">Add New Item</a> 
-            </button>
+                <img alt="" src="/static/public/vector-15.svg" />
+                <a href="/addmedicine" style="color:white;">Add New Item</a>
+            </button> <br>
+            <br>
+            <br>
+            
+            <div id="userDetailsTableContainer">
+                <!-- Table will be dynamically inserted here -->
+            </div>
             <!-- 
     //////////////////////////////////////
     //////////////////////////////////////
@@ -225,6 +264,8 @@
     </section>
     </main>
     </div>
+    <script src="/static/public/zzinvendetail.js">
+    </script>
 </body>
 
 </html>

@@ -54,6 +54,25 @@ class Employee(models.Model):
         return self.euser
     
 # /////////////
+    
+class InvenDetails(models.Model):
+    medicine_name = models.CharField(max_length=100)
+    medicine_id = models.CharField(max_length=100)
+    medicine_company = models.CharField(max_length=100)
+    medicine_cost = models.PositiveIntegerField()
+    expiration_date = models.DateField(auto_now_add=False)
+    batch_number = models.CharField(max_length=100)
+    supplier_id = models.CharField(max_length=100)
+    DisplayFields = ['medicine_name','medicine_id','medicine_company','medicine_cost','expiration_date','batch_number','supplier_id']
+    SearchableFields = ['medicine_name','medicine_id','medicine_company'] 
+    FilterFields = ['batch_number','supplier_id'] 
+    class Meta:
+        db_table = 'InventoryDetails'
+    def __str__(self):
+        return self.medicine_name
+
+
+# ////////////////
 # ////////////// stock track 
 from django.db import models
 
