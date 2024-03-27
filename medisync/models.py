@@ -72,6 +72,29 @@ class InvenDetails(models.Model):
         return self.medicine_name
 
 
+
+class PurchaseOrder(models.Model):
+    order_id = models.CharField(max_length=100)
+    order_date = models.DateField(auto_now_add=False)
+    total_cost = models.DecimalField(max_digits=10, decimal_places=2)
+    unit_price = models.DecimalField(max_digits=10, decimal_places=2)
+    medicine_id = models.CharField(max_length=100)
+    supplier_id = models.CharField(max_length=100)
+    quantity_ordered = models.IntegerField()
+    transaction_id = models.CharField(max_length=100)
+    # transaction_id = models.CharField(max_length=100)
+    transaction_type = models.CharField(max_length=100)
+    invoice_date = models.DateField(auto_now_add=False)
+    supplier_email = models.EmailField()
+
+    DisplayFields = ['order_id','order_date','total_cost','unit_price','medicine_id','supplier_id','quantity_ordered','transaction_id','transaction_type','invoice_date','supplier_email']
+    SearchableFields = ['order_id','medicine_id','supplier_id','transaction_id','supplier_email'] 
+    FilterFields = ['invoice_date','order_date'] 
+    class Meta:
+        db_table = 'Purchase Order'
+    def __str__(self):
+        return self.order_id 
+
 # ////////////////
 # ////////////// stock track 
 from django.db import models

@@ -5,6 +5,7 @@ from .models import Medicine
 from .models import Employee
 from .models import signIn
 from .models import InvenDetails
+from .models import PurchaseOrder
 
 @admin.register(Medicine)
 class medicineAdmin(admin.ModelAdmin):
@@ -18,6 +19,14 @@ class detailsAdmin(admin.ModelAdmin):
     list_display = InvenDetails.DisplayFields 
     search_fields = InvenDetails.SearchableFields
     list_filter = InvenDetails.FilterFields
+
+@admin.register(PurchaseOrder)
+class purchaseAdmin(admin.ModelAdmin):
+    list_display = PurchaseOrder.DisplayFields 
+    search_fields = PurchaseOrder.SearchableFields
+    list_filter = PurchaseOrder.FilterFields
+
+
 
 
 @admin.register(Employee)

@@ -17,7 +17,7 @@ urlpatterns = [
     path('inventoryhome',views.inventoryhome,name="inventoryhome"),
     path('employee',views.employee,name="employee"),
     path('customer',views.customer,name="customer"),
-
+    path('purchaseorder',views.purchaseorder,name="purchaseorder"),
 
     path('edit_entry/<int:medicine_id>/<int:entry_id>/', views.edit_entry, name='edit_entry'),
 

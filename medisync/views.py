@@ -43,6 +43,9 @@ def employee(request):
 def customer(request):
     return render(request,"authentication/customer.html")
 
+def purchaseorder(request):
+    return render(request,"authentication/purchaseorder.html")
+
 def signin(request):
     if request.method == 'POST':
         username = request.POST['username']
@@ -130,6 +133,34 @@ def signup(request):
 
         return redirect('signin')
     return render(request,"authentication/signup.html")
+
+# purchase Order
+def PurchaseOrder(request):
+    
+    if request.method == "POST":
+        # username = request.POST.get('username')
+        order_id = request.POST['order_id']
+        order_date = request.POST['order_date']
+        total_cost = request.POST['total_cost']
+        unit_price = request.POST['unit_price']
+        medicine_id = request.POST['medicine_id']
+        supplier_id = request.POST['supplier_id']
+        quantity_ordered = request.POST['quantity_ordered']
+        transaction_id = request.POST['transaction_id']
+        transaction_type = request.POST['transaction_type']
+        supplier_id = request.POST['supplier_id']
+        invoice_date = request.POST['invoice_date']
+        supplier_email = request.POST['supplier_email']
+
+        myuser = User.objects.create_user(order_id,order_date,total_cost,unit_price,medicine_id,supplier_id,quantity_ordered,transaction_id,transaction_type,invoice_date,supplier_email) 
+        myuser.first_name = order_id
+        myuser.last_name = order_date
+
+        # myuser.is_active=False
+        myuser.save() 
+
+        return redirect('purchaseorder')
+    return render(request,"authentication/purchaseorder.html")
 
 
 # 
@@ -343,4 +374,33 @@ def export_to_csv(request):
 
 
 # ///////////////
-# /////////////// import export excel sheet using pandas csv form 
+# /////////////// purchase order
+# views.py
+# from django.shortcuts import render, redirect
+# from .forms import PurchaseOrderForm  # Import your form
+# from .models import PurchaseOrder
+
+# def submit_order(request):
+#     if request.method == 'POST':
+#         form = PurchaseOrderForm(request.POST)
+#         if form.is_valid():
+#             # Create a new PurchaseOrder instance with form data
+#             order = PurchaseOrder(
+#                 order_id=form.cleaned_data['order_id'],
+#                 order_date=form.cleaned_data['order_date'],
+#                 total_cost=form.cleaned_data['total_cost'],
+#                 unit_price=form.cleaned_data['unit_price'],
+#                 medicine_id=form.cleaned_data['medicine_id'],
+#                 supplier_id=form.cleaned_data['supplier_id'],
+#                 quantity_ordered=form.cleaned_data['quantity_ordered'],
+#                 transaction_id=form.cleaned_data['transaction_id'],
+#                 transaction_type=form.cleaned_data['transaction_type'],
+#                 invoice_date=form.cleaned_data['invoice_date'],
+#                 supplier_email=form.cleaned_data['supplier_email']
+#             )
+#             # Save the PurchaseOrder instance to the database
+#             order.save()
+#             return redirect('success_page')  # Redirect to a success page
+#     else:
+#         form = PurchaseOrderForm()
+#     return render(request, 'authentication/purchaseorder.html', {'form': form})
