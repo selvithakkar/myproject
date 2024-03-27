@@ -46,6 +46,10 @@ def customer(request):
 def purchaseorder(request):
     return render(request,"authentication/purchaseorder.html")
 
+def MED(request):
+    return render(request,"authentication/MED.html")
+
+
 def signin(request):
     if request.method == 'POST':
         username = request.POST['username']
@@ -135,32 +139,32 @@ def signup(request):
     return render(request,"authentication/signup.html")
 
 # purchase Order
-def PurchaseOrder(request):
+# def PurchaseOrder(request):
     
-    if request.method == "POST":
-        # username = request.POST.get('username')
-        order_id = request.POST['order_id']
-        order_date = request.POST['order_date']
-        total_cost = request.POST['total_cost']
-        unit_price = request.POST['unit_price']
-        medicine_id = request.POST['medicine_id']
-        supplier_id = request.POST['supplier_id']
-        quantity_ordered = request.POST['quantity_ordered']
-        transaction_id = request.POST['transaction_id']
-        transaction_type = request.POST['transaction_type']
-        supplier_id = request.POST['supplier_id']
-        invoice_date = request.POST['invoice_date']
-        supplier_email = request.POST['supplier_email']
+#     if request.method == "POST":
+#         # username = request.POST.get('username')
+#         order_id = request.POST['order_id']
+#         order_date = request.POST['order_date']
+#         total_cost = request.POST['total_cost']
+#         unit_price = request.POST['unit_price']
+#         medicine_id = request.POST['medicine_id']
+#         supplier_id = request.POST['supplier_id']
+#         quantity_ordered = request.POST['quantity_ordered']
+#         transaction_id = request.POST['transaction_id']
+#         transaction_type = request.POST['transaction_type']
+#         supplier_id = request.POST['supplier_id']
+#         invoice_date = request.POST['invoice_date']
+#         supplier_email = request.POST['supplier_email']
 
-        myuser = User.objects.create_user(order_id,order_date,total_cost,unit_price,medicine_id,supplier_id,quantity_ordered,transaction_id,transaction_type,invoice_date,supplier_email) 
-        myuser.first_name = order_id
-        myuser.last_name = order_date
+#         myuser = User.objects.create_user(order_id,order_date,total_cost,unit_price,medicine_id,supplier_id,quantity_ordered,transaction_id,transaction_type,invoice_date,supplier_email) 
+#         myuser.first_name = order_id
+#         myuser.last_name = order_date
 
-        # myuser.is_active=False
-        myuser.save() 
+#         # myuser.is_active=False
+#         myuser.save() 
 
-        return redirect('purchaseorder')
-    return render(request,"authentication/purchaseorder.html")
+#         return redirect('purchaseorder')
+#     return render(request,"authentication/purchaseorder.html")
 
 
 # 

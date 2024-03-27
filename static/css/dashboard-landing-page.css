@@ -604,8 +604,8 @@
   left: 0;
   background-color: var(--color-gray-400);
   width: 100%;
-  height: 100%;
-  display: none;
+  height: 200vh;
+  /* display: none; */
 }
 .inventory-frame-inner {
   align-self: stretch;
