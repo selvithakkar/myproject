@@ -36,16 +36,16 @@
                                 <div class="selvi9">Tirth</div>
                             </div>
                             <div class="inventory-status-frame">
-                                <div class="super-admin8">Super Admin</div>
-                                <div class="super-admin9">Super Admin</div>
+                                <div class="super-admin8"> Admin</div>
+                                <div class="super-admin9"></div>
                             </div>
                         </div>
                     </div>
                     <div class="visit-inventory-button">
-                        <img class="visit-inventory-button-child" alt="" src="/static/public/group-13.svg" />
+                        <!-- <img class="visit-inventory-button-child" alt="" src="/static/public/group-13.svg" />
 
                         <img class="visit-inventory-button-item" loading="eager" alt=""
-                            src="/static/public/group-13.svg" />
+                            src="/static/public/group-13.svg" /> -->
                     </div>
                 </div>
                 <form class="group14">
@@ -54,7 +54,9 @@
                             <div class="frame-child227"></div>
                             <img class="total-suppliers-icon" alt="" src="/static/public/vector-2.svg" />
 
-                            <div class="dashboard15">Dashboard</div>
+                            <div class="dashboard15">
+                                <a href="/dashboard" style="color: white;"> Dashboard </a>
+                            </div>
                         </div>
                         <div class="customers6">
                             <div class="rectangle-parent180">
@@ -62,7 +64,8 @@
                                 <div class="frequently-bought">
                                     <img class="group-icon31" alt="" src="/static/public/group.svg" />
 
-                                    <div class="inventory23">Inventory Details</div>
+                                    <div class="inventory23">
+                                        <a href="/inventoryhome" style="color: white;"> Inventory Details</a> </div>
                                 </div>
                                 <!-- <img
                     class="inventory-frame-icon"
@@ -75,7 +78,9 @@
                                 <div class="group-parent10">
                                     <img class="group-icon32" alt="" src="/static/public/group-1.svg" />
 
-                                    <div class="reports17">Generate Report</div>
+                                    <div class="reports17">
+                                        <a href="/report" style="color: white;">Generate Report</a>
+                                    </div>
                                 </div>
                                 <!-- <img
                       class="vector-icon98"
@@ -87,13 +92,17 @@
                                 <div class="frame-child230"></div>
                                 <img class="vector-icon99" alt="" src="/static/public/vector-5.svg" />
 
-                                <div class="configuration14">Medicine Details</div>
+                                <div class="configuration14"><a href="/InventoryDetails" style="color: white;"> 
+                                    Medicine Details</a>
+                                </div>
                             </div>
                             <div class="rectangle-parent182">
                                 <div class="frame-child230"></div>
                                 <img class="vector-icon99" alt="" src="/static/public/group-1.svg" />
 
-                                <div class="configuration14">Stock Tracking </div>
+                                <div class="configuration14">
+                                    <a href="/stocktrack" style="color: white;">Stock Tracking</a>
+                                 </div>
                             </div>
                         </div>
                     </div>
@@ -104,7 +113,9 @@
                             <img class="group-icon33" alt="" src="/static/public/vector-6.svg" />
 
                             <div class="inventory-list4">
-                                <div class="contact-management16">Customer Information</div>
+                                <div class="contact-management16">
+                                    <a href="/customer" style="color: white;">Customer Information</a>
+                                </div>
                             </div>
                             <!-- <img
                   class="frame-header-icon"
@@ -118,7 +129,9 @@
                                 <img class="quick-report-icon" loading="eager" alt=""
                                     src="/static/public/vector-8.svg" />
 
-                                <div class="notifications14">Employee Information</div>
+                                <div class="notifications14">
+                                    <a href="/employee" style="color: white;">     Employee Information</a>
+                                </div>
                             </div>
                             <!-- <div class="group-by-groups">
                   <div class="frame-actions"></div>
@@ -234,8 +247,8 @@
                         </div>
                         <div class="form-column">
                             <label for="orderDate">Order Date:</label>
-                            <input type="date" id="orderDate" name="orderDate" required min="2024-01-01"
-                                max="2024-04-28">
+                            <input type="date" id="orderDate" name="orderDate" required min="2024-04-19"
+                                max="2024-04-30">
                         </div>
                     </div>
                     <div class="form-row">
@@ -276,13 +289,13 @@
                                 <option value="Cash">Cash</option>
                                 <option value="Credit Card">Debit Card</option>
                                 <option value="Debit Card">Credit Card</option>
-                                <option value="UPI">UPI</option>
+                                <option value="UPI">UPI / Google Pay</option>
                             </select>
                         </div>
                         <div class="form-column" style="width: 90%;">
                             <label for="invoiceDate">Invoice Date:</label>
-                            <input type="date" id="invoiceDate" name="invoiceDate" required min="2024-01-01"
-                                max="2024-04-28">
+                            <input type="date" id="invoiceDate" name="invoiceDate" required min="2024-04-25"
+                                max="2024-04-27">
                         </div>
                     </div>
                     <div class="form-row" style="width: 105.5%;">
@@ -291,14 +304,14 @@
                             <input type="email" id="email" name="email" required>
                         </div>
                     </div>
-                    <div class="form-row" >
+                    <div class="form-row">
                         <button type="submit" class="b1" style="margin-left: 27%;background-color: red;">Submit</button>
                         <button type="button" class="b1" class="reset" onclick="resetForm()"
                             style="margin-left: 5%;background-color: red; ">Reset</button>
                     </div>
                 </form>
             </div>
-
+            <!--  -->
         </main>
     </div>
     <!-- 
@@ -319,6 +332,13 @@
         function resetForm() {
             document.getElementById("purchaseOrderForm").reset();
         }
+        document.getElementById('invoiceDate').addEventListener('change', function () {
+            var endDateValue = this.value;
+            if (!isValidDate(endDateValue)) {
+                alert('Invalid date selected. Please select a date on or before today.');
+                this.value = ''; // Clear the input value
+            }
+        });
 
         document.getElementById("purchaseOrderForm").addEventListener("submit", function (event) {
             const form = document.getElementById("purchaseOrderForm");
@@ -451,6 +471,95 @@
 
             alert("Purchase order generated successfully! \nTeam MediSYnc");
         });
+        //////////////////////////////////
+        //////////////////////////////////
+        //////////////////////////////////
+
+        // Function to validate Order Date
+        function validateOrderDate() {
+            var orderDate = document.getElementById('orderDate').value;
+            var currentDate = new Date().toISOString().slice(0, 10); // Get current date in YYYY-MM-DD format
+
+            if (orderDate < currentDate) {
+                alert("Order Date cannot be in the past.");
+                return false;
+            }
+
+            var invoiceDate = document.getElementById('invoiceDate').value;
+            if (orderDate > invoiceDate) {
+                alert("Order Date cannot be after the Invoice Date.");
+                return false;
+            }
+
+            return true; // Validation successful
+        }
+
+        // Function to update the Invoice Date to current date and disable the field
+        function updateInvoiceDate() {
+            var invoiceDateField = document.getElementById('invoiceDate');
+            var currentDate = new Date().toISOString().slice(0, 10); // Get current date in YYYY-MM-DD format
+            invoiceDateField.value = currentDate;
+            invoiceDateField.disabled = true;
+        }
+
+        // Add event listener to form submission
+        document.getElementById('purchaseOrderForm').addEventListener('submit', function (event) {
+            if (!validateOrderDate()) {
+                event.preventDefault(); // Prevent form submission if validation fails
+            }
+        });
+
+        // Call updateInvoiceDate function when the page loads
+        window.onload = function () {
+            updateInvoiceDate();
+        };
+
+
+        //////////////////////////////////
+        //////////////////////////////////
+        function validateOrderDate() {
+            var orderDate = document.getElementById('orderDate').value;
+            var currentDate = new Date().toISOString().slice(0, 10); // Get current date in YYYY-MM-DD format
+
+            if (orderDate < currentDate) {
+                alert("Order Date cannot be in the past.");
+                return false;
+            }
+
+            var invoiceDate = document.getElementById('invoiceDate').value;
+            if (orderDate > invoiceDate) {
+                alert("Order Date cannot be after the Invoice Date.");
+                return false;
+            }
+
+            return true; // Validation successful
+        }
+
+        document.getElementById('purchaseOrderForm').addEventListener('submit', function (event) {
+            if (!validateOrderDate()) {
+                event.preventDefault(); // Prevent form submission if validation fails
+            }
+        });
+        //////////////////////////////////
+        //////////////////////////////////
+        // Function to generate a random alphanumeric string for order ID
+        function generateOrderId() {
+            var prefix = 'ORD_'; // Prefix for the order ID
+            var suffix = Math.random().toString(36).substr(2, 4).toUpperCase(); // Random alphanumeric suffix
+            var numbers = Math.floor(Math.random() * 900) + 100; // Random 3-digit number
+            var finalId = prefix + suffix + numbers; // Concatenate prefix, suffix, and numbers
+            return finalId;
+        }
+
+        // Set the generated order ID and disable the field
+        document.addEventListener('DOMContentLoaded', function () {
+            var orderIdField = document.getElementById('orderId');
+            var generatedOrderId = generateOrderId();
+            orderIdField.value = generatedOrderId;
+            orderIdField.disabled = true;
+        });
+
+
     </script>
 </body>
 

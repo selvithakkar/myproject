@@ -35,42 +35,46 @@ function trackQuantity() {
 //     return;
 //   }
   // // Example of different scenarios based on medicine ID (dummy data)
-  if (medicineId === "O2") {
+  if (medicineId === "O2" || medicineId === "Prasugrel" ) {
     stockIn = 200;
     stockOut = 80;
     totalSales = 500;
-  } else if (medicineId === "Ciplar20mg") {
+  } else if (medicineId === "Ciplar 20mg" || medicineId === "Ciplar 40mg" || medicineId === "Ramipril" || medicineId === "Simvastatin") {
     stockIn = 1200;
     stockOut = 880;
     totalSales = 700;
-  }else if (medicineId === "Azithral 500mg") {
+  }else if (medicineId === "Ondem" || medicineId === "Pioglitazone") {
     stockIn = 300;
     stockOut = 50;
-    totalSales = 700;
-  }else if (medicineId === "Shelcal-CT") {
-    stockIn = 200;
-    stockOut = 80;
-    totalSales = 700;
-  }else if (medicineId === "Ondem") {
-    stockIn = 300;
-    stockOut = 50;
-    totalSales = 700;
-  }else if (medicineId === "Dolo 650") {
-    stockIn = 700;
-    stockOut = 1200;
-    totalSales = 700;
-  }else if (medicineId === "paracetamol500mg") {
-    stockIn = 200;
-    stockOut = 50;
-    totalSales = 600;
-  } else if (medicineId === "ibuprofen200mg") {
-    stockIn = 120;
-    stockOut = 10;
     totalSales = 400;
-  } else if (medicineId === "amoxicillin250mg") {
+  }else if (medicineId === "Aspirin" || medicineId === "Clopidogrel") {
+    stockIn = 200;
+    stockOut = 50;
+    totalSales = 400;
+  }else if (medicineId === "Atorvastatin" || medicineId === "Bisoprolol") {
+    stockIn = 120;
+    stockOut = 20;
+    totalSales = 600;
+  }else if (medicineId === "Amlodipine 5mg" || medicineId === "Amlodipine 10mg") {
     stockIn = 180;
-    stockOut = 25;
+    stockOut = 125;
+    totalSales = 300;
+  }else if (medicineId === "Digoxin" || medicineId === "Isosorbide mononitrate") {
+    stockIn = 1200;
+    stockOut = 700;
     totalSales = 800;
+  } else if (medicineId === "Enalapril" || medicineId === "Lisinopril") {
+    stockIn = 300;
+    stockOut = 190;
+    totalSales = 400;
+  } else if (medicineId === "Metoprolol" || medicineId === "Losartan 25mg") {
+    stockIn = 500;
+    stockOut = 380;
+    totalSales = 800;
+  }else if (medicineId === "Furosemide" || medicineId === "Heparin" || medicineId === "Valsartan 80mg") {
+    stockIn = 750;
+    stockOut = 440;
+    totalSales = 400;
   } else {
     // Display an error message if medicine ID is not found
     var errorMessage = "<p class='error-message'>Medicine ID not found. Please enter a valid ID.</p>";

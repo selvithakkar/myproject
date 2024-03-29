@@ -80,10 +80,14 @@
 .b1{
    height: 45px;
    width: 120px;
-   color: white;
+   /* color: white; */
+   color: #fff;
    font-size: 15px;
+   border: none;
    padding: 1px 3px;
    cursor: pointer;
+   transition: background-color 0.3s ease;
+
 }
 .b1.reset{
     background-color: #dc3545;
