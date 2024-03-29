@@ -224,7 +224,7 @@
             <!--  -->
             <!--  -->
             <!--  -->
-            <div class="main" style="margin-left: -40%;"><b>
+            <div class="main" style="margin-left: -40%; margin-top: -2%;"><b>
                     <k style="color: darkgray;font-size: 23px;">&nbsp;<b>Inventory Details</b>&nbsp; </k>
                     <h style="font-size: 20px;"><b>>&nbsp;</b></h>
                     <k style="color:black;font-size: 25px;"><b>Generate Purchase Order</b></k>
@@ -235,7 +235,7 @@
             //////////////////////////////////////
             //////////////////////////////////////
         -->
-            <div class="container">
+            <div class="container" style="margin-top: -4.8%;margin-bottom: -10%;">
                 <!-- <h2>Purchase Order Form</h2> -->
                 <form action="/purchaseorder" id="purchaseOrderForm" class="form" method="post">
                     {% csrf_token %}
@@ -248,7 +248,7 @@
                         <div class="form-column">
                             <label for="orderDate">Order Date:</label>
                             <input type="date" id="orderDate" name="orderDate" required min="2024-04-19"
-                                max="2024-04-30">
+                                max="2024-04-28">
                         </div>
                     </div>
                     <div class="form-row">
@@ -331,6 +331,7 @@
     <script>
         function resetForm() {
             document.getElementById("purchaseOrderForm").reset();
+            alert('Reseted the Form Successfully..!!')
         }
         document.getElementById('invoiceDate').addEventListener('change', function () {
             var endDateValue = this.value;
@@ -353,6 +354,7 @@
             const unitPrice = parseFloat(document.getElementById("unitPrice").value);
             const quantityOrdered = parseInt(document.getElementById("quantityOrdered").value);
             const transactionId = document.getElementById("transactionId").value;
+            const medicineId = document.getElementById("medicineId").value;
             const invoiceDate = new Date(document.getElementById("invoiceDate").value);
             const orderDate = new Date(document.getElementById("orderDate").value);
             const transactionType = document.getElementById("transactionType").value;
@@ -434,6 +436,13 @@
                 return;
             }
 
+            // Validate Medicine ID format 
+             if (!/^FQ20\d{3}$/.test(medicineId)) {
+                event.preventDefault();
+                alert("Invalid Medicine Id");
+                return;
+            }
+
             // Validate total cost minimum value ($10)
             if (totalCost < 10) {
                 event.preventDefault();
@@ -463,13 +472,13 @@
             }
 
             // Validate order ID format (e.g., "ORD" followed by 5 digits)
-            if (!/^ORD\d{5}$/.test(orderId)) {
-                event.preventDefault();
-                alert("Order ID must start with 'ORD' followed by 5 digits.");
-                return;
-            }
+            // if (!/^ORD\d{5}$/.test(orderId)) {
+            //     event.preventDefault();
+            //     alert("Order ID must start with 'ORD' followed by 5 digits.");
+            //     return;
+            // }
 
-            alert("Purchase order generated successfully! \nTeam MediSYnc");
+            alert("MediSYnc \n Purchase order generated successfully! ");
         });
         //////////////////////////////////
         //////////////////////////////////

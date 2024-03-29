@@ -4,6 +4,9 @@ function generateReportAndChart(adminUsername, adminPassword) {
     var endDate = new Date(document.getElementById('endDate').value);
 
     var initialStock, stockIn, stockOut, finalStock;
+    // Construct table row HTML
+    
+
 
     if (selectedMedicine === '1234567890' && '2' && '3' && 'Vowels') {
         alert("Please enter valid credentials")
@@ -64,14 +67,14 @@ function generateReportAndChart(adminUsername, adminPassword) {
         finalStock = 0;
     }
 
-    var inventoryReport = `
-<strong>Date Range:</strong> ${startDate.toDateString()} to ${endDate.toDateString()}<br>
-<strong>Product Name:</strong> ${selectedMedicine} <br>
-<strong>Initial Stock:</strong>${initialStock}<br>
-<strong>Stock In:</strong>${stockIn} <br>
-<strong>Stock Out:</strong>${stockOut}<br>
-<strong>Final Stock:</strong>${finalStock}<br>
-`;
+        var inventoryReport = `
+    <strong>Date Range:</strong> ${startDate.toDateString()} to ${endDate.toDateString()}<br>
+    <strong>Product Name:</strong> ${selectedMedicine} <br>
+    <strong>Initial Stock:</strong>${initialStock}<br>
+    <strong>Stock In:</strong>${stockIn} <br>
+    <strong>Stock Out:</strong>${stockOut}<br>
+    <strong>Final Stock:</strong>${finalStock}<br>
+    `;
 
     document.getElementById('reportOutput').innerHTML = inventoryReport;
     // document.getElementById('chart-container').style.display = 'block';

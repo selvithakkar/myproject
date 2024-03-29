@@ -8,7 +8,7 @@ import re
 from django.http import JsonResponse
 import io
 import base64
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 from django.template.loader import get_template
 
 # Create your views here.
@@ -58,7 +58,7 @@ def signin(request):
         user = authenticate(username=username, password=password)
 
         if user is not None:
-            login(request,user)
+            signin(request,user)
             username = user.first_name 
             return render (request,"authentication/dashboard.html",{'username':username})
         else:
@@ -249,28 +249,28 @@ def generate_report_and_chart(request):
         colors = ['rgba(0, 255, 0, 0.2)', 'rgba(255, 99, 132, 0.2)', 'rgba(255, 205, 86, 0.2)', 'rgba(54, 162, 235, 0.2)']
         border_colors = ['rgba(0, 255, 0, 1)', 'rgba(255, 99, 132, 1)', 'rgba(255, 205, 86, 1)', 'rgba(54, 162, 235, 1)']
 
-        fig, ax = plt.subplots()
-        ax.pie(chart_data, labels=labels, colors=colors, autopct='%1.1f%%', startangle=90, pctdistance=0.85,
-               wedgeprops=dict(edgecolor='w'))
-        ax.set(aspect="equal")
-        plt.tight_layout()
+    #     fig, ax = plt.subplots()
+    #     ax.pie(chart_data, labels=labels, colors=colors, autopct='%1.1f%%', startangle=90, pctdistance=0.85,
+    #            wedgeprops=dict(edgecolor='w'))
+    #     ax.set(aspect="equal")
+    #     plt.tight_layout()
 
-        # Save the chart to a bytes object
-        buffer = io.BytesIO()
-        plt.savefig(buffer, format='png')
-        buffer.seek(0)
-        plt.close()
+    #     # Save the chart to a bytes object
+    #     buffer = io.BytesIO()
+    #     plt.savefig(buffer, format='png')
+    #     buffer.seek(0)
+    #     plt.close()
 
-        # Encode the bytes object to base64
-        chart_image = base64.b64encode(buffer.getvalue()).decode('utf-8')
+    #     # Encode the bytes object to base64
+    #     chart_image = base64.b64encode(buffer.getvalue()).decode('utf-8')
 
-        # Render the HTML template with the chart image
-        template = get_template('reportt.html')
-        html = template.render({'chart_image': chart_image})
+    #     # Render the HTML template with the chart image
+    #     template = get_template('reportt.html')
+    #     html = template.render({'chart_image': chart_image})
 
-        # Return the HTML response
-        return HttpResponse(html)
-    else:
+    #     # Return the HTML response
+    #     return HttpResponse(html)
+    # else:
         return HttpResponse('Invalid request method', status=405)
     
 # ////////////////////////
